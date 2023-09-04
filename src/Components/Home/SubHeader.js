@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const SubHeader = () => {
+
+    const [activeItem, setActiveItem] = useState("");
+
+    const handleItemClick = (itemName) => {
+        setActiveItem(itemName);
+    };
+
     return (
         <div className="sub-header">
         <div className="container">
@@ -22,16 +29,16 @@ const SubHeader = () => {
             <div className="col-md-4">
                 <ul className="right-icons">
                 <li>
-                    <Link to="/">
-                    <i className="fa fa-facebook"></i>
-                    </Link>
+
+                    <a href="https://www.fb.com" target="_blank"><i className="fa fa-facebook"></i></a>
+
                 </li>
-                <li>
+                {/* <li>
                     <Link to="/">
                     <i className="fa fa-twitter"></i>
                     </Link>
                 </li>
-                {/* <li>
+                <li>
                     <Link to="/">
                     <i className="fa fa-linkedin"></i>
                     </Link>

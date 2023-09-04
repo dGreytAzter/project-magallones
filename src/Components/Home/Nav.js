@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../vendor/bootstrap/css/bootstrap.css";
 import SubHeader from "./SubHeader";
+import Logo from '../assets/images/Logo.png';
 import { Link, Outlet } from "react-router-dom";
 
 const Nav = () => {
@@ -18,7 +19,7 @@ const Nav = () => {
             <nav className="navbar navbar-expand-lg navbar-sticky">
             <div className="container">
                 <Link className="navbar-brand" to="/">
-                <h2>Dito ay LOGO</h2>
+                <img src={Logo} alt='logo' style={{height: '70px', width: 'auto'}} />
                 </Link>
                 <button
                 className="navbar-toggler"
@@ -26,20 +27,20 @@ const Nav = () => {
                 data-toggle="collapse"
                 data-target="#navbarResponsive"
                 aria-controls="navbarResponsive"
-                aria-expanded="false"
+                aria-expanded="true"
                 aria-label="Toggle navigation"
                 >
                 <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                 <ul className="navbar-nav ml-auto">
-                    <li
+                    <li 
                     className={`nav-item ${
                         activeItem === "home" ? "active" : ""
                     }`}
                     onClick={() => handleItemClick("home")}
                     >
-                    <Link className="nav-link" to="/">
+                    <Link className="nav-link fw-bold" to="/" style={{color: '#BE0168'}}>
                         Home
                     </Link>
                     </li>
@@ -49,7 +50,7 @@ const Nav = () => {
                     }`}
                     onClick={() => handleItemClick("about")}
                     >
-                    <Link className="nav-link" to="/about">
+                    <Link className="nav-link fw-bold" to="/about" style={{color: '#BE0168'}}>
                         About Us
                     </Link>
                     </li>
@@ -59,7 +60,7 @@ const Nav = () => {
                     }`}
                     onClick={() => handleItemClick("services")}
                     >
-                    <Link className="nav-link" to="/services">
+                    <Link className="nav-link fw-bold" to="/services" style={{color: '#BE0168'}}>
                         Our Services
                     </Link>
                     </li>   
